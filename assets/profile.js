@@ -6,7 +6,7 @@ const PROFILE = {
   // Tagline under your name on the home page. Each string is its own line.
   bio: [
     "Mechanical Engineering at Stanford",
-    "a human-centered approach to AI-driven, tangible design.",
+    "Human-centered approach to AI-driven, tangible design.",
   ],
 
   // Longer story shown on the About page. Each string is its own paragraph.
