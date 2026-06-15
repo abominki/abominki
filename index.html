@@ -70,7 +70,12 @@
       // --- header ---
       function renderHeader() {
         $("name").textContent = PROFILE.name;
-        $("bio").textContent = PROFILE.bio;
+        const bio = $("bio");
+        const lines = Array.isArray(PROFILE.bio) ? PROFILE.bio : [PROFILE.bio];
+        lines.forEach((line, i) => {
+          if (i > 0) bio.append(document.createElement("br"));
+          bio.append(document.createTextNode(line));
+        });
         const nav = $("links");
         const items = [{ label: "About", href: "./about.html" }, ...(PROFILE.links || [])];
         if (PROFILE.resumeUrl) items.push({ label: "Résumé", href: PROFILE.resumeUrl });

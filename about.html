@@ -20,7 +20,6 @@
       <a class="back" href="./index.html">← Back to projects</a>
       <header>
         <h1 class="name">About</h1>
-        <p class="bio" id="bio"></p>
       </header>
 
       <div class="rule"></div>
@@ -31,7 +30,6 @@
     <script src="./assets/profile.js"></script>
     <script>
       const $ = (id) => document.getElementById(id);
-      $("bio").textContent = PROFILE.bio;
       const about = $("about");
       (PROFILE.about || []).forEach((para) => {
         const p = document.createElement("p");

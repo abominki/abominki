@@ -3,8 +3,11 @@
 const PROFILE = {
   name: "Abigail Kim",
 
-  // One-liner shown under your name on the home page.
-  bio: "Mechanical Engineering at Stanford, Class of 2029 — a human-centered approach to AI-driven, tangible design.",
+  // Tagline under your name on the home page. Each string is its own line.
+  bio: [
+    "Mechanical Engineering at Stanford",
+    "a human-centered approach to AI-driven, tangible design.",
+  ],
 
   // Longer story shown on the About page. Each string is its own paragraph.
   about: [
