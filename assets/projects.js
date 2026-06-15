@@ -10,9 +10,9 @@
 // content and drop your images into assets/projects/.
 const PROJECTS = [
   {
-    title: "Autonomous Line-Following Robot",
-    description: "A small differential-drive robot that tracks a taped course using IR sensors and a PID loop.",
-    skills: "Embedded C on Arduino, PID tuning, soldering and basic PCB layout, and how to debug control loops on real hardware instead of in simulation.",
+    title: "Airlift",
+    description: "A twin-fan hovercraft that ferries a payload across cracked, hole-pocked ground without ever touching it — imagined for disaster scenarios like moving people over earthquake-damaged terrain. One fan drives the craft forward while a second inflates a perforated air skirt, floating it on a self-generated cushion of air.",
+    skills: "Building this taught me to design in tradeoffs — every gram of payload, battery, and 3D-printed support had to be paid back in lift. I learned the fluid dynamics behind an air cushion (the same principle as an air hockey table, flipped onto the craft itself), and how to tune the skirt's perforations so enough air stayed trapped to float the load even over a surface riddled with holes. Splitting the work across two fans, one for lift and one for thrust, pushed me to balance competing forces inside a single, weight-constrained system.",
     cover: "",
     images: [],
   },
