@@ -7,10 +7,10 @@ A small, static personal portfolio. No build step, no dependencies — just open
 
 Everything you change lives in two files:
 
-- `public/profile.js` — your name, bio, contact links, and résumé link.
-- `public/projects.js` — your projects (title, description, skills, images).
+- `assets/profile.js` — your name, bio, contact links, and résumé link.
+- `assets/projects.js` — your projects (title, description, skills, images).
 
-Drop project images into `public/projects/` and reference them by path in
+Drop project images into `assets/projects/` and reference them by path in
 `projects.js`. Refresh the page to see changes.
 
 ## Deploying

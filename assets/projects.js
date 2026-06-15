@@ -3,11 +3,11 @@
 //   title       — name of the project
 //   description — short blurb shown on the card AND at the top of the modal
 //   skills      — what you learned (shown in the modal's "Skills I learned" block)
-//   cover       — cover image path, e.g. "./public/projects/robot-cover.jpg" ("" = placeholder)
+//   cover       — cover image path, e.g. "./assets/projects/robot-cover.jpg" ("" = placeholder)
 //   images      — a couple of image paths for the modal gallery ([] = placeholders)
 //
 // These 5 are PLACEHOLDERS so the site renders right away. Swap in your real
-// content and drop your images into public/projects/.
+// content and drop your images into assets/projects/.
 const PROJECTS = [
   {
     title: "Autonomous Line-Following Robot",
