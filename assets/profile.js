@@ -8,9 +8,9 @@ const PROFILE = {
 
   // Longer story shown on the About page. Each string is its own paragraph.
   about: [
-    "I'm studying Mechanical Engineering at Stanford (Class of 2029). I started on a premed path — psychology research at UCSB and pediatrics research at Stanford Med — but my love of building tangible things for real problems pulled me toward MechE.",
-    "That psychology background still drives how I design: human-centered first, building solutions that genuinely fit the people who use them. I'm especially drawn to weaving new technologies like AI into physical, mechanical design — from training AI to detect bubbles that improve the cooling of large computer systems at UCI, to working at Astraea, a YC-backed startup using AI to manage and analyze clinical data.",
-    "And as someone who loves art, I care deeply about clean lines and aesthetics — I believe the best solutions are ones that work and feel considered.",
+    "I'm a Mechanical Engineering student at Stanford, Class of 2029. I came in expecting to study medicine — after research in psychology at UCSB and pediatrics at Stanford Med — but I kept being drawn to building things you can hold, that solve real problems. That pull led me to mechanical engineering.",
+    "Psychology still shapes how I design: I start with the person before the product, asking who something is for before what it should be. Lately that's drawn me to where new technology meets the physical world — teaching an AI to detect bubbles in a cooling system at UCI, and building tools at Astraea, a YC-backed startup using AI to make sense of clinical data.",
+    "As an artist, aesthetic is never an afterthought. I'm drawn to clean lines and considered design — to work that doesn't just function, but feels right.",
   ],
 
   // Contact links. Add/remove freely.
