@@ -1,13 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="A">
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="A">
   <rect width="64" height="64" rx="15" fill="#d49bac" />
-  <text
-    x="50%"
-    y="50%"
-    text-anchor="middle"
-    dominant-baseline="central"
-    font-family="'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif"
-    font-size="40"
-    font-weight="700"
-    fill="#fffdfc"
-  >A</text>
+  <path
+    d="M20 46 L32 18 L44 46 M24.5 37 L39.5 37"
+    fill="none"
+    stroke="#fffdfc"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
 </svg>

@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#fcfbfb" />
     <meta name="description" content="About Abigail Kim." />
     <title>About — Abigail Kim</title>
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg?v=2" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +19,7 @@
     <div class="wrap">
       <a class="back" href="./index.html">← Back to projects</a>
       <header>
-        <h1 class="name" id="name"></h1>
+        <h1 class="name">About</h1>
         <p class="bio" id="bio"></p>
       </header>
 
@@ -31,7 +31,6 @@
     <script src="./assets/profile.js"></script>
     <script>
       const $ = (id) => document.getElementById(id);
-      $("name").textContent = PROFILE.name;
       $("bio").textContent = PROFILE.bio;
       const about = $("about");
       (PROFILE.about || []).forEach((para) => {
