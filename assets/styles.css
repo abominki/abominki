@@ -102,8 +102,12 @@ header { margin-bottom: 40px; }
   background: #fff; border: 1px solid var(--silver-soft);
   border-radius: 14px; box-shadow: 0 18px 50px rgba(38, 36, 42, 0.22);
 }
-.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-.gallery .ph, .gallery .shot { height: 168px; border-radius: 0; }
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 6px; }
+.gallery .ph, .gallery .shot {
+  height: 180px; object-fit: contain; background: #f4f4f5; border-radius: 6px;
+}
+/* odd number of images → let the last one span the full width */
+.gallery > *:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .modal-body { padding: 20px 22px 24px; }
 .modal-title { margin: 0; font-size: 19px; font-weight: 700; color: var(--blush); }
 .modal-desc { margin: 10px 0 18px; font-size: 14px; color: #55535a; }
