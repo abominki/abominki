@@ -107,9 +107,10 @@ img.cover-img { display: block; width: 100%; height: auto; }
 .gallery { display: flex; flex-direction: column; gap: 6px; padding: 6px; }
 .grow { display: flex; gap: 6px; }
 .grow > .ph, .grow > .shot {
-  flex: 1; min-width: 0; height: 180px; object-fit: contain;
-  background: #f4f4f5; border-radius: 6px;
+  flex: 1; min-width: 0; height: 180px; object-fit: contain; border-radius: 6px;
 }
+/* real photos: no fill behind them, so letterboxing blends into the modal */
+.grow > .shot { background: transparent; }
 .modal-body { padding: 20px 22px 24px; }
 .modal-title { margin: 0; font-size: 19px; font-weight: 700; color: var(--blush); }
 .modal-desc { margin: 10px 0 18px; font-size: 14px; color: #55535a; }

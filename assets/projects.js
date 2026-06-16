@@ -41,8 +41,8 @@ const PROJECTS = [
         "./assets/projects/folio-5.jpg",
         "./assets/projects/folio-6.jpg",
       ],
-      // bottom row: the dieline and the key / extra pocket piece
-      ["./assets/projects/folio-1.jpg", "./assets/projects/folio-2.jpg"],
+      // bottom row: the key / extra pocket piece, then the dieline
+      ["./assets/projects/folio-2.jpg", "./assets/projects/folio-1.jpg"],
     ],
   },
   {
