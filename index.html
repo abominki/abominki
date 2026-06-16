@@ -118,7 +118,14 @@
         const gallery = $("gallery");
         gallery.replaceChildren();
         const imgs = p.images && p.images.length ? p.images : [null, null];
-        imgs.forEach((src) => gallery.append(shot(src, p.title)));
+        // images can be a flat array (one row) or an array of rows (nested arrays)
+        const rows = Array.isArray(imgs[0]) ? imgs : [imgs];
+        rows.forEach((row) => {
+          const r = document.createElement("div");
+          r.className = "grow";
+          row.forEach((src) => r.append(shot(src, p.title)));
+          gallery.append(r);
+        });
         $("modal-title").textContent = p.title;
         $("modal-desc").textContent = p.description;
         $("modal-skills").textContent = p.skills;

@@ -5,7 +5,8 @@
 //   description — fuller text shown at the top of the modal when a card is opened
 //   skills      — what you learned (shown in the modal's "Skills I learned" block)
 //   cover       — cover image path, e.g. "./assets/projects/robot-cover.jpg" ("" = placeholder)
-//   images      — a couple of image paths for the modal gallery ([] = placeholders)
+//   images      — modal gallery paths ([] = placeholders). A flat array is one row;
+//                 nest arrays to lay images out in rows, e.g. [[a, b, c], [d, e]]
 //
 // These 5 are PLACEHOLDERS so the site renders right away. Swap in your real
 // content and drop your images into assets/projects/.
@@ -17,11 +18,14 @@ const PROJECTS = [
     skills: "Building this taught me to design in tradeoffs — every gram of payload, battery, and 3D-printed support had to be paid back in lift. I learned the fluid dynamics behind an air cushion (the same principle as an air hockey table, flipped onto the craft itself), and how to tune the skirt's perforations so enough air stayed trapped to float the load even over a surface riddled with holes. Splitting the work across two fans, one for lift and one for thrust, pushed me to balance competing forces inside a single, weight-constrained system. And because the run was timed, I tuned the direction of the thrust fan and the placement of the weight to carry the craft across as quickly as possible.",
     cover: "./assets/projects/airlift-1.jpg",
     images: [
-      "./assets/projects/airlift-2.jpg",
-      "./assets/projects/airlift-5.jpg",
-      "./assets/projects/airlift-3.jpg",
-      "./assets/projects/airlift-4.jpg",
-      "./assets/projects/airlift-6.jpg",
+      // top row: three build photos
+      [
+        "./assets/projects/airlift-2.jpg",
+        "./assets/projects/airlift-3.jpg",
+        "./assets/projects/airlift-6.jpg",
+      ],
+      // bottom row: dimensioned board + fan CAD
+      ["./assets/projects/airlift-4.jpg", "./assets/projects/airlift-5.jpg"],
     ],
   },
   {
