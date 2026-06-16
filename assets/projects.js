@@ -29,11 +29,21 @@ const PROJECTS = [
     ],
   },
   {
-    title: "Compact Heat Exchanger Redesign",
-    description: "Reworked a tube-and-shell heat exchanger to cut volume ~30% while holding the same thermal duty.",
-    skills: "Heat-transfer and pressure-drop analysis, parametric CAD in SolidWorks, and trading off performance against manufacturability.",
-    cover: "",
-    images: [],
+    title: "Folio",
+    blurb: "A laptop case cut from two pieces of recycled cardboard that refolds into a stand.",
+    description: "A laptop carrier made entirely from recycled cardboard — and nothing else — that refolds into a laptop stand. Inspired by Apple's pared-back packaging, it's built from two single-cut pieces, with only a few small corrugated inserts added to cushion the laptop against impact. The geometry had to do double duty: carrying and protecting the laptop as a case, then reconfiguring into a stable stand, all while keeping waste to a minimum.",
+    skills: "Working within a hard constraint — two pieces of recycled cardboard, single cuts, nothing else — taught me how much elegance comes from subtraction. Keeping each piece to one continuous cut was the hardest part: every fold had to earn its place, holding and protecting the laptop's weight without extra structure. The only additions were small corrugated inserts to cushion against impact. I learned to think of structure as form, and to treat sustainability as a design driver rather than an afterthought.",
+    cover: "./assets/projects/folio-4.jpg",
+    images: [
+      // top row: the modes — unfolded flat, as a stand, stand from the side
+      [
+        "./assets/projects/folio-3.jpg",
+        "./assets/projects/folio-5.jpg",
+        "./assets/projects/folio-6.jpg",
+      ],
+      // bottom row: the dieline and the key / extra pocket piece
+      ["./assets/projects/folio-1.jpg", "./assets/projects/folio-2.jpg"],
+    ],
   },
   {
     title: "CNC-Machined Bike Component",
