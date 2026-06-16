@@ -61,11 +61,13 @@ header { margin-bottom: 40px; }
 .about p:last-child { margin-bottom: 0; }
 
 /* Grid */
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+/* masonry-style columns so each card wraps its own image at its natural height */
+.grid { column-count: 2; column-gap: 16px; }
+@media (max-width: 600px) { .grid { column-count: 1; } }
 
 .card {
   display: block; text-align: left; width: 100%; padding: 0;
+  margin-bottom: 16px; break-inside: avoid; -webkit-column-break-inside: avoid;
   font: inherit; color: inherit; cursor: pointer;
   background: #fff; border: 1px solid var(--silver-soft);
   border-radius: 12px; overflow: hidden;
