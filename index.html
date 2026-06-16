@@ -102,7 +102,7 @@
           body.innerHTML =
             `<h2 class="card-title"></h2><p class="card-desc"></p>`;
           body.querySelector(".card-title").textContent = p.title;
-          body.querySelector(".card-desc").textContent = p.description;
+          body.querySelector(".card-desc").textContent = p.blurb || p.description;
           card.append(cover, body);
           card.addEventListener("click", () => openModal(i));
           grid.append(card);

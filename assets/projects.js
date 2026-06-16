@@ -1,7 +1,8 @@
 // Your projects. Edit this file to update your portfolio — no markup changes needed.
 // Each project:
 //   title       — name of the project
-//   description — short blurb shown on the card AND at the top of the modal
+//   blurb       — short one-liner shown on the card (falls back to description if omitted)
+//   description — fuller text shown at the top of the modal when a card is opened
 //   skills      — what you learned (shown in the modal's "Skills I learned" block)
 //   cover       — cover image path, e.g. "./assets/projects/robot-cover.jpg" ("" = placeholder)
 //   images      — a couple of image paths for the modal gallery ([] = placeholders)
@@ -11,10 +12,11 @@
 const PROJECTS = [
   {
     title: "Airlift",
+    blurb: "A twin-fan hovercraft that floats a payload over cracked, unstable ground.",
     description: "A twin-fan hovercraft that ferries a payload across cracked, hole-pocked ground without ever touching it — imagined for disaster scenarios like moving people over earthquake-damaged terrain. One fan drives the craft forward while a second inflates a perforated air skirt, floating it on a self-generated cushion of air.",
     skills: "Building this taught me to design in tradeoffs — every gram of payload, battery, and 3D-printed support had to be paid back in lift. I learned the fluid dynamics behind an air cushion (the same principle as an air hockey table, flipped onto the craft itself), and how to tune the skirt's perforations so enough air stayed trapped to float the load even over a surface riddled with holes. Splitting the work across two fans, one for lift and one for thrust, pushed me to balance competing forces inside a single, weight-constrained system.",
-    cover: "",
-    images: [],
+    cover: "./assets/projects/airlift-1.jpg",
+    images: ["./assets/projects/airlift-2.jpg", "./assets/projects/airlift-3.jpg"],
   },
   {
     title: "Compact Heat Exchanger Redesign",
