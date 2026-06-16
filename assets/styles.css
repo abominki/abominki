@@ -78,12 +78,14 @@ header { margin-bottom: 40px; }
 }
 .card:focus-visible { outline: 2px solid var(--blush); outline-offset: 2px; }
 
-.ph, .card .shot, .card .cover-img {
+.ph {
   display: flex; align-items: center; justify-content: center;
   width: 100%; height: 132px;
   background: linear-gradient(135deg, #eceef0, #d8dbdf);
-  color: #a7abb2; font-size: 12px; object-fit: cover;
+  color: #a7abb2; font-size: 12px;
 }
+/* card cover: show the whole photo, uncropped */
+img.cover-img { display: block; width: 100%; height: auto; }
 .card-body { padding: 14px 15px 16px; }
 .card-title { margin: 0; font-size: 15px; font-weight: 650; }
 .card-desc { margin: 5px 0 0; font-size: 13px; color: var(--muted); }

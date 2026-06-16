@@ -18,9 +18,9 @@ const PROJECTS = [
     cover: "./assets/projects/airlift-1.jpg",
     images: [
       "./assets/projects/airlift-2.jpg",
+      "./assets/projects/airlift-5.jpg",
       "./assets/projects/airlift-3.jpg",
       "./assets/projects/airlift-4.jpg",
-      "./assets/projects/airlift-5.jpg",
       "./assets/projects/airlift-6.jpg",
     ],
   },
