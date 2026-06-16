@@ -1,6 +1,7 @@
 // Your projects. Edit this file to update your portfolio — no markup changes needed.
 // Each project:
 //   title       — name of the project
+//   tag         — short technical label shown above the title on the card (optional)
 //   blurb       — short one-liner shown on the card (falls back to description if omitted)
 //   description — fuller text shown at the top of the modal when a card is opened
 //   skills      — what you learned (shown in the modal's "Skills I learned" block)
@@ -13,6 +14,7 @@
 const PROJECTS = [
   {
     title: "Airlift",
+    tag: "Air-cushion hovercraft",
     blurb: "A twin-fan hovercraft that floats a payload over cracked, unstable ground.",
     description: "A twin-fan hovercraft that ferries a payload across cracked, hole-pocked ground without ever touching it — imagined for disaster scenarios like moving people over earthquake-damaged terrain. One fan drives the craft forward while a second inflates a perforated air skirt, floating it on a self-generated cushion of air.",
     skills: "Building this taught me to design in tradeoffs — every gram of payload, battery, and 3D-printed support had to be paid back in lift. I learned the fluid dynamics behind an air cushion (the same principle as an air hockey table, flipped onto the craft itself), and how to tune the skirt's perforations so enough air stayed trapped to float the load even over a surface riddled with holes. Splitting the work across two fans, one for lift and one for thrust, pushed me to balance competing forces inside a single, weight-constrained system. And because the run was timed, I tuned the direction of the thrust fan and the placement of the weight to carry the craft across as quickly as possible.",
@@ -30,6 +32,7 @@ const PROJECTS = [
   },
   {
     title: "Folio",
+    tag: "Recycled-cardboard case & stand",
     blurb: "A laptop case cut from two pieces of recycled cardboard that refolds into a stand.",
     description: "A laptop carrier made entirely from recycled cardboard (and nothing else) that refolds into a laptop stand. Inspired by Apple's pared-back packaging, it's built from two single-cut pieces, with only a few small corrugated inserts added to cushion the laptop against impact. The geometry had to do double duty: carrying and protecting the laptop as a case, then reconfiguring into a stable stand, all while keeping waste to a minimum.",
     skills: "Working within a hard constraint—two pieces of recycled cardboard, single cuts, nothing else—taught me how much elegance comes from subtraction. Keeping each piece to one continuous cut was the hardest part: every fold had to earn its place, holding and protecting the laptop's weight without extra structure. The only additions were small corrugated inserts to cushion against impact. I learned to think of structure as form, and to treat sustainability as a design driver rather than an afterthought.",

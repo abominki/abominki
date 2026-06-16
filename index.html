@@ -102,7 +102,9 @@
           const body = document.createElement("div");
           body.className = "card-body";
           body.innerHTML =
-            `<h2 class="card-title"></h2><p class="card-desc"></p>`;
+            `<span class="card-tag"></span><h2 class="card-title"></h2><p class="card-desc"></p>`;
+          const tagEl = body.querySelector(".card-tag");
+          if (p.tag) tagEl.textContent = p.tag; else tagEl.remove();
           body.querySelector(".card-title").textContent = p.title;
           body.querySelector(".card-desc").textContent = p.blurb || p.description;
           card.append(cover, body);

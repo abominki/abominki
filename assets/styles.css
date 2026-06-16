@@ -89,6 +89,11 @@ header { margin-bottom: 40px; }
 /* card cover: show the whole photo, uncropped */
 img.cover-img { display: block; width: 100%; height: auto; }
 .card-body { padding: 14px 15px 16px; }
+.card-tag {
+  display: block; margin-bottom: 5px;
+  font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--muted);
+}
 .card-title { margin: 0; font-size: 15px; font-weight: 650; }
 .card-desc { margin: 5px 0 0; font-size: 13px; color: var(--muted); }
 
