@@ -49,11 +49,26 @@ const PROJECTS = [
     ],
   },
   {
-    title: "CNC-Machined Bike Component",
-    description: "Designed and machined an aluminum stem, from CAD model to a finished, anodized part.",
-    skills: "GD&T and tolerancing, CAM toolpaths, running a 3-axis mill, and designing parts around how they'd actually be cut.",
-    cover: "",
-    images: [],
+    title: "LifeArc",
+    tag: "Disaster-relief launcher & deployables",
+    blurb: "A launcher and two self-expanding payloads that deliver aid over walls of wildfire into a trapped town.",
+    description: "A relief system for a town in California encircled by wildfire and cut off from food, water, and escape. An elastic-powered launcher fires payloads on a precise arc to thread the narrow gap between the walls of fire and drop into the town. Two payloads deploy on impact: an area device that opens like an umbrella to spread resources across the ground, and a volume device that scissors upward to form shelter for small animals.",
+    skills: "This project pushed me to design for a human emergency, not just a spec. I learned to store and release energy reliably with a pair of elastic bands, and to tune a launch to a specific trajectory: an 8.5-foot apex landing 8 feet out, threaded through a narrow gap. The payloads taught me mechanism design from two angles: a radial, umbrella-style expansion for the area device, and a scissoring X-linkage for the volume device, biased open by rubber bands. Most of all, it reframed engineering as care—building things that reach people when nothing else can.",
+    cover: "./assets/projects/lifearc-launcher-1.jpg",
+    images: [
+      // area device: deployed, stowed, CAD transform
+      [
+        "./assets/projects/lifearc-area-3.jpg",
+        "./assets/projects/lifearc-area-2.jpg",
+        "./assets/projects/lifearc-area-1.jpg",
+      ],
+      // volume device: deployed, collapsed, CAD transform
+      [
+        "./assets/projects/lifearc-vol-1.jpg",
+        "./assets/projects/lifearc-vol-2.jpg",
+        "./assets/projects/lifearc-vol-3.jpg",
+      ],
+    ],
   },
   {
     title: "FSAE Suspension Analysis",
