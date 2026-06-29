@@ -18,139 +18,138 @@
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <div class="wrap">
-      <header>
-        <h1 class="name" id="name"></h1>
-        <p class="bio" id="bio"></p>
-        <nav class="links" id="links"></nav>
-      </header>
-
-      <div class="rule"></div>
-
-      <main class="grid" id="grid" aria-label="Projects"></main>
-    </div>
-
-    <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div class="modal">
-        <button class="close" id="close" type="button" aria-label="Close">✕</button>
-        <div class="gallery" id="gallery"></div>
-        <div class="modal-body">
-          <h2 class="modal-title" id="modal-title"></h2>
-          <p class="modal-desc" id="modal-desc"></p>
-          <div class="skills-label">Skills I learned</div>
-          <p class="skills-text" id="modal-skills"></p>
-        </div>
-      </div>
-    </div>
+    <main id="app"></main>
 
     <script src="./assets/profile.js"></script>
     <script src="./assets/projects.js"></script>
     <script>
-      const $ = (id) => document.getElementById(id);
+      const app = document.getElementById("app");
 
-      // --- placeholder / image helper ---
+      function el(tag, cls, text) {
+        const e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (text != null) e.textContent = text;
+        return e;
+      }
+
+      // image, with graceful placeholder fallback
       function shot(src, alt) {
         if (!src) {
-          const d = document.createElement("div");
-          d.className = "ph";
-          d.textContent = "image";
+          const d = el("div", "ph", "image");
           return d;
         }
-        const img = document.createElement("img");
-        img.className = "shot";
+        const img = el("img", "shot");
         img.src = src;
         img.alt = alt || "";
-        img.onerror = () => {
-          const d = document.createElement("div");
-          d.className = "ph";
-          d.textContent = "image";
-          img.replaceWith(d);
-        };
+        img.onerror = () => img.replaceWith(el("div", "ph", "image"));
         return img;
       }
 
-      // --- header ---
-      function renderHeader() {
-        $("name").textContent = PROFILE.name;
-        const bio = $("bio");
-        const lines = Array.isArray(PROFILE.bio) ? PROFILE.bio : [PROFILE.bio];
-        lines.forEach((line, i) => {
-          if (i > 0) bio.append(document.createElement("br"));
-          bio.append(document.createTextNode(line));
-        });
-        const nav = $("links");
-        const items = [{ label: "About", href: "./about.html" }, ...(PROFILE.links || [])];
-        if (PROFILE.resumeUrl) items.push({ label: "Résumé", href: PROFILE.resumeUrl });
+      function linkNodes(items) {
+        const nav = el("nav", "links");
         for (const { label, href } of items) {
-          const a = document.createElement("a");
-          a.textContent = label;
+          const a = el("a", null, label);
           a.href = href;
           if (href.startsWith("http")) { a.target = "_blank"; a.rel = "noopener"; }
           nav.append(a);
         }
+        return nav;
       }
 
-      // --- grid ---
-      function renderGrid() {
-        const grid = $("grid");
-        PROJECTS.forEach((p, i) => {
-          const card = document.createElement("button");
-          card.className = "card";
-          card.type = "button";
-          const cover = shot(p.cover, p.title);
-          cover.classList.add("cover-img");
-          const body = document.createElement("div");
-          body.className = "card-body";
-          body.innerHTML =
-            `<span class="card-tag"></span><h2 class="card-title"></h2><p class="card-desc"></p>`;
-          const tagEl = body.querySelector(".card-tag");
-          if (p.tag) tagEl.textContent = p.tag; else tagEl.remove();
-          body.querySelector(".card-title").textContent = p.title;
-          body.querySelector(".card-desc").textContent = p.blurb || p.description;
-          card.append(cover, body);
-          card.addEventListener("click", () => openModal(i));
-          grid.append(card);
+      function contactItems() {
+        const items = [...(PROFILE.links || [])];
+        if (PROFILE.resumeUrl) items.push({ label: "Résumé", href: PROFILE.resumeUrl });
+        return items;
+      }
+
+      function renderHero() {
+        const sec = el("section", "hero reveal");
+        const name = el("h1", "hero-name", PROFILE.name);
+        const tag = el("p", "hero-tagline");
+        const lines = Array.isArray(PROFILE.bio) ? PROFILE.bio : [PROFILE.bio];
+        lines.forEach((line, i) => {
+          if (i) tag.append(document.createElement("br"));
+          tag.append(document.createTextNode(line));
         });
+        sec.append(name, tag, linkNodes([{ label: "About", href: "#about" }, ...contactItems()]));
+        sec.append(el("div", "scroll-cue", "↓"));
+        return sec;
       }
 
-      // --- modal ---
-      const overlay = $("overlay");
-      let lastFocused = null;
-
-      function openModal(i) {
-        const p = PROJECTS[i];
-        const gallery = $("gallery");
-        gallery.replaceChildren();
-        const imgs = p.images && p.images.length ? p.images : [null, null];
-        // images can be a flat array (one row) or an array of rows (nested arrays)
-        const rows = Array.isArray(imgs[0]) ? imgs : [imgs];
-        rows.forEach((row) => {
-          const r = document.createElement("div");
-          r.className = "grow";
-          row.forEach((src) => r.append(shot(src, p.title)));
-          gallery.append(r);
-        });
-        $("modal-title").textContent = p.title;
-        $("modal-desc").textContent = p.description;
-        $("modal-skills").textContent = p.skills;
-        lastFocused = document.activeElement;
-        overlay.classList.add("open");
-        $("close").focus();
+      function renderAbout() {
+        const sec = el("section", "about-section reveal");
+        sec.id = "about";
+        sec.append(el("p", "section-label", "About"));
+        const copy = el("div", "about-copy");
+        (PROFILE.about || []).forEach((p) => copy.append(el("p", null, p)));
+        sec.append(copy);
+        return sec;
       }
 
-      function closeModal() {
-        overlay.classList.remove("open");
-        if (lastFocused) lastFocused.focus();
+      function renderProject(p, i) {
+        const sec = el("section", "project" + (i % 2 ? " flip" : ""));
+
+        const main = el("div", "project-main reveal");
+        const media = el("div", "project-media");
+        const cover = shot(p.cover, p.title);
+        cover.classList.add("cover-img");
+        media.append(cover);
+
+        const text = el("div", "project-text");
+        if (p.tag) text.append(el("span", "eyebrow", p.tag));
+        text.append(el("h2", "p-title", p.title));
+        if (p.blurb) text.append(el("p", "p-blurb", p.blurb));
+        if (p.description) text.append(el("p", "p-desc", p.description));
+        if (p.skills) {
+          const sk = el("div", "p-skills");
+          sk.append(el("div", "skills-label", "Skills I learned"));
+          sk.append(el("p", "skills-text", p.skills));
+          text.append(sk);
+        }
+        main.append(media, text);
+        sec.append(main);
+
+        if (p.images && p.images.length) {
+          const rows = Array.isArray(p.images[0]) ? p.images : [p.images];
+          const gal = el("div", "project-gallery reveal");
+          rows.forEach((row) => {
+            const r = el("div", "grow");
+            row.forEach((src) => r.append(shot(src, p.title)));
+            gal.append(r);
+          });
+          sec.append(gal);
+        }
+        return sec;
       }
 
-      $("close").addEventListener("click", closeModal);
-      overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && overlay.classList.contains("open")) closeModal();
+      // build the page
+      app.append(renderHero());
+      app.append(renderAbout());
+      PROJECTS.forEach((p, i) => {
+        if (i > 0) app.append(el("div", "project-divider"));
+        app.append(renderProject(p, i));
       });
+      const foot = el("footer", "foot");
+      foot.append(linkNodes(contactItems()));
+      foot.append(el("div", null, "© " + PROFILE.name));
+      app.append(foot);
 
-      renderHeader();
-      renderGrid();
+      // scroll-reveal
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reveals = document.querySelectorAll(".reveal");
+      if (reduce || !("IntersectionObserver" in window)) {
+        reveals.forEach((e) => e.classList.add("in"));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+        );
+        reveals.forEach((e) => io.observe(e));
+      }
     </script>
   </body>
 </html>

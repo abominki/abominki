@@ -1,16 +1,13 @@
 // Your projects. Edit this file to update your portfolio — no markup changes needed.
-// Each project:
+// Each project renders as its own scroll section (alternating image / text).
 //   title       — name of the project
-//   tag         — short technical label shown above the title on the card (optional)
-//   blurb       — short one-liner shown on the card (falls back to description if omitted)
-//   description — fuller text shown at the top of the modal when a card is opened
-//   skills      — what you learned (shown in the modal's "Skills I learned" block)
-//   cover       — cover image path, e.g. "./assets/projects/robot-cover.jpg" ("" = placeholder)
-//   images      — modal gallery paths ([] = placeholders). A flat array is one row;
-//                 nest arrays to lay images out in rows, e.g. [[a, b, c], [d, e]]
-//
-// These 5 are PLACEHOLDERS so the site renders right away. Swap in your real
-// content and drop your images into assets/projects/.
+//   tag         — short technical label shown above the title (optional)
+//   blurb       — short lead line under the title (optional)
+//   description — fuller paragraph
+//   skills      — what you learned (shown in the "Skills I learned" block)
+//   cover       — cover image path, e.g. "./assets/projects/cover.jpg" ("" = placeholder)
+//   images      — gallery paths shown below the section ([] = none). A flat array is
+//                 one row; nest arrays to lay images out in rows, e.g. [[a, b, c], [d, e]]
 const PROJECTS = [
   {
     title: "Airlift",
@@ -67,19 +64,5 @@ const PROJECTS = [
         "./assets/projects/lifearc-vol-3.jpg",
       ],
     ],
-  },
-  {
-    title: "FSAE Suspension Analysis",
-    description: "Modeled front suspension kinematics for the team to dial in camber and roll-center behavior.",
-    skills: "Vehicle dynamics fundamentals, MATLAB modeling, and translating analysis into changes the team could actually fabricate.",
-    cover: "",
-    images: [],
-  },
-  {
-    title: "Passive Solar Water Heater",
-    description: "Built and instrumented a benchtop solar collector to measure efficiency across the day.",
-    skills: "Thermodynamics in practice, sensor instrumentation and data logging, and writing up experimental results clearly.",
-    cover: "",
-    images: [],
   },
 ];
