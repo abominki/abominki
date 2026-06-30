@@ -72,7 +72,7 @@ const PROJECTS = [
     description: "A hand-cranked kinetic automaton that brings an Ironman triathlon to life — turn one handle and the swimmer, cyclist, and runner all move across the scene above. Three shafts, each with its own mechanism, translate that single rotation into three distinct motions, including a treadmill that carries the running figures through a sliver of clearance and returns them exactly to where they started.",
     skills: "The whole challenge was making one hand crank drive everything smoothly, so minimizing friction across three linked mechanisms became the heart of the project. Weight was the other constraint, especially on the treadmill: each running figure folded down into a sliver of clearance, then needed just enough weight to settle back into its correct position as it returned to the scene — but not so much that the paper treadmill would tear. I learned to budget space tightly so every gear and crank had room to turn, to tune mechanisms for smooth motion under load, and to make the whole scene beautiful while it ran.",
     // Paste your YouTube video ID here (the part after v= or youtu.be/) to feature the clip.
-    youtube: "",
+    youtube: "Q6vMC36ZsHI",
     cover: "./assets/projects/automaton-1.jpg",
     images: [
       // build shots: mechanism + crank, then a scene detail
