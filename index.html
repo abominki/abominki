@@ -109,6 +109,21 @@
         main.append(media, text);
         sec.append(main);
 
+        if (p.youtube) {
+          const vid = el("div", "project-video reveal");
+          const frame = el("div", "video-frame");
+          const ifr = document.createElement("iframe");
+          ifr.src = "https://www.youtube.com/embed/" + p.youtube;
+          ifr.title = p.title + " — video";
+          ifr.loading = "lazy";
+          ifr.allow =
+            "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          ifr.allowFullscreen = true;
+          frame.append(ifr);
+          vid.append(frame);
+          sec.append(vid);
+        }
+
         if (p.images && p.images.length) {
           const rows = Array.isArray(p.images[0]) ? p.images : [p.images];
           const gal = el("div", "project-gallery");
