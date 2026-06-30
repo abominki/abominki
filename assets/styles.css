@@ -128,27 +128,17 @@ body {
 
 /* ---- scroll-linked motion: scrubs to scroll position so things get "pulled up" ---- */
 @supports (animation-timeline: view()) {
+  /* same scroll-linked pull-up for text and images alike — moderate delay + drag */
   .reveal {
     opacity: 1; transform: none; transition: none;
-    animation: rise-in linear both;
+    animation: pull-up linear both;
     animation-timeline: view();
-    /* starts later (delay) and finishes later (longer drag) */
-    animation-range: entry 12% entry 95%;
-  }
-  /* images travel further + drag through the cover range, so they feel pulled up */
-  .project-media.reveal, .grow.reveal {
-    animation-name: pull-up;
-    animation-range: entry 6% cover 34%;
-  }
-  @keyframes rise-in {
-    from { opacity: 0; transform: translateY(48px); }
-    70%  { opacity: 1; }
-    to   { opacity: 1; transform: translateY(0); }
+    animation-range: entry 6% entry 82%;
   }
   @keyframes pull-up {
-    from { opacity: 0; transform: translateY(100px) scale(0.965); }
-    80%  { opacity: 1; }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
+    from { opacity: 0; transform: translateY(74px); }
+    75%  { opacity: 1; }
+    to   { opacity: 1; transform: translateY(0); }
   }
 }
 
