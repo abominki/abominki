@@ -132,20 +132,22 @@ body {
     opacity: 1; transform: none; transition: none;
     animation: rise-in linear both;
     animation-timeline: view();
-    animation-range: entry 0% entry 48%;
+    /* starts later (delay) and finishes later (longer drag) */
+    animation-range: entry 12% entry 95%;
   }
-  /* images travel further, so they feel like they're being drawn up as you scroll */
+  /* images travel further + drag through the cover range, so they feel pulled up */
   .project-media.reveal, .grow.reveal {
     animation-name: pull-up;
-    animation-range: entry 0% entry 62%;
+    animation-range: entry 6% cover 34%;
   }
   @keyframes rise-in {
-    from { opacity: 0; transform: translateY(34px); }
+    from { opacity: 0; transform: translateY(48px); }
+    70%  { opacity: 1; }
     to   { opacity: 1; transform: translateY(0); }
   }
   @keyframes pull-up {
-    from { opacity: 0; transform: translateY(72px) scale(0.985); }
-    60%  { opacity: 1; }
+    from { opacity: 0; transform: translateY(100px) scale(0.965); }
+    80%  { opacity: 1; }
     to   { opacity: 1; transform: translateY(0) scale(1); }
   }
 }
