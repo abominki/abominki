@@ -77,11 +77,11 @@
       }
 
       function renderAbout() {
-        const sec = el("section", "about-section reveal");
+        const sec = el("section", "about-section");
         sec.id = "about";
-        sec.append(el("p", "section-label", "About"));
+        sec.append(el("p", "section-label reveal", "About"));
         const copy = el("div", "about-copy");
-        (PROFILE.about || []).forEach((p) => copy.append(el("p", null, p)));
+        (PROFILE.about || []).forEach((p) => copy.append(el("p", "reveal", p)));
         sec.append(copy);
         return sec;
       }
