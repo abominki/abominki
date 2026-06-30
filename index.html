@@ -89,13 +89,13 @@
       function renderProject(p, i) {
         const sec = el("section", "project" + (i % 2 ? " flip" : ""));
 
-        const main = el("div", "project-main reveal");
-        const media = el("div", "project-media");
+        const main = el("div", "project-main");
+        const media = el("div", "project-media reveal");
         const cover = shot(p.cover, p.title);
         cover.classList.add("cover-img");
         media.append(cover);
 
-        const text = el("div", "project-text");
+        const text = el("div", "project-text reveal");
         if (p.tag) text.append(el("span", "eyebrow", p.tag));
         text.append(el("h2", "p-title", p.title));
         if (p.blurb) text.append(el("p", "p-blurb", p.blurb));
@@ -111,9 +111,9 @@
 
         if (p.images && p.images.length) {
           const rows = Array.isArray(p.images[0]) ? p.images : [p.images];
-          const gal = el("div", "project-gallery reveal");
+          const gal = el("div", "project-gallery");
           rows.forEach((row) => {
-            const r = el("div", "grow");
+            const r = el("div", "grow reveal");
             row.forEach((src) => r.append(shot(src, p.title)));
             gal.append(r);
           });
